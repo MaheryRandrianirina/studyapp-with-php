@@ -1,0 +1,1128 @@
+
+$logo_color : #fff;
+$home_logo_color: #025373;
+$progressBarColor : #025373d0;
+$color: #fff;
+$home_color: #025E73;
+$border_color: #888C80;
+$submitButton: #BF9288;
+$bg: #025E73;
+$home_bg: #fff;
+$indication-opacity: 0.3;
+$edit-logo-color: rgba(255, 255, 255, 0.705);
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("./fonts/Montserrat-Regular.otf");
+}
+
+* {
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: $bg;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: $color;
+}
+.menu-button-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    color: $color;
+    background-color: #0008;
+    
+    .bar-menu {
+        transition: transform .3s ease, opacity .3s ease;
+    }
+    .change-icon {
+        transform: rotate(180deg);
+        opacity: 0;
+    }
+    .quit-hamburger-menu {
+        opacity: 0;
+        transform: rotate(180deg);
+        transition: transform .3s ease, opacity .3s;
+    }
+    .quit-hamburger-menu.active {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+.set-display-none {
+    display: none;
+}
+.hamburger-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #025e73ab;
+    width: 0;
+    height: 0; 
+    padding: 10px;
+    box-shadow: -1px 1px 6px $border_color;
+    transition: width .3s, height .3s, opacity .3s;
+    .inside-hamburger {
+        background-color: transparent;
+    }
+    .inside-hamburger-user-profile {
+        display: block;
+        width: 100%;
+        background: transparent;
+        .user-auth .user-pseudo, .date {
+            font-size: 2vw;
+            padding-left: 10%;
+        }
+        .date {
+            width: 100%;
+            border-radius: 0;
+            margin: 0;
+            background-color: $submitButton;
+            color: $color;
+        }
+    }
+    .inside-hamburger-precedent-sidebar {
+        display: block;
+        width: 100%;
+        background-color: transparent;
+        margin-top: 20px;
+        i {
+            margin: 0;
+            padding: 10px;
+            font-size: 2vw;
+            span {
+                display: inline-block;
+                font-family: "Montserrat";
+                font-weight: 200;
+                margin-left: 10px;
+            }
+        }
+        .active-item {
+            border-radius: 0;
+        }
+    }
+}
+.active-hamburger {
+    width: 30%;
+    height: 400px;
+    opacity: 1;
+}
+
+.become-carousel {
+    background: #888C80;
+}
+.home {
+    background-color: $home_bg;
+    color: $home_color;
+    .navbar {
+        background-color: $color;
+    }
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: $bg;
+}
+
+.logo {
+    color: $logo_color;
+    margin: 20px;
+    font-size: 40px;
+
+}
+.home .logo {
+    color: $home_logo_color;
+}
+
+/*-------------------
+TOUT CE QUI EST LOGIN ET FORMULAIRE
+----------------------*/
+#login-main {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .presentation_left {
+        background-image: linear-gradient(to bottom, #000, #0005), url("./assets/bg.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+        opacity: 0.8;
+        width: 70%;
+        color: $color;
+        font-family: "Montserrat", sans-serif;
+        .presentation-container {
+            width: 70%;
+            margin-top: 120px;
+        }
+    }
+    .login_container_right {
+        position: relative;
+        width: 30%;
+        height: 600px;
+        background-color: $color;
+        color: $bg;
+        padding: 20px;
+    
+        .indications {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: $border_color;
+        }
+        .have-no-account {
+            position: absolute;
+            margin: 0 20%;
+        }
+        .login_form {
+            height: 400px;
+            padding: 40px;
+            .submitBtn {
+                background: $submitButton;
+                color: #fff;
+                border: none;
+                height: 30px;
+                padding: 5px;
+                margin: 20px 10px 0;
+                float: right;
+                transition: background-color 0.2s;
+                cursor: pointer;
+            }
+            .submitBtn:hover{
+                background-color: #cf6a53;
+            }
+            .pseudo-container, .pwd-container {
+                width: 93%;
+                i {
+                    margin-left: 5px;
+                }
+                input {
+                    margin: 3px 0;
+                    width: 90%;
+                    border: none;
+                    border-bottom: 1px solid $border_color;
+                }
+                margin: 10px 2% 40px 0;
+                transform: translateX(5%);
+            }
+            label, .remember-me {
+                margin-left: 5%;
+            }
+        }
+        .remember-span {
+            color: $submitButton;
+        }
+        
+    }
+}
+
+
+.visible {
+    transform: translateX(26%);
+    transition: 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+.condition-check {
+    opacity: $indication-opacity;
+    transform: scale(0.6);
+}
+.one_number_condition, .letters_number_condition {
+    font-style: italic;
+    font-size: 13px;
+    opacity: $indication-opacity;
+}
+
+/*-------------------
+TOUT CE QUI EST HOME
+----------------------*/
+#home-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+
+.sidebar-left {
+    width: 7.414%;
+    color: $color;
+    background: $bg;
+    height: 600px;
+    i {
+        display: block;
+        padding: 20.35% 59% 20.35% 20.35%;
+        margin: 20.35%;
+        cursor: pointer;
+        font-size: 1.5vw;
+        transition: color 0.2s;
+        i:hover {
+            color: $submitButton;
+        }
+    }
+}
+
+.content {
+    position: relative;
+    width: 74%;
+    padding: 20px;
+    border-top: 1px solid $border_color;
+    .calendar-creation-instructions {
+        width: 70%;
+        margin-left: 50px;
+        transition: transform 0.3s;
+    }
+    .submitBtn {
+        background: $submitButton;
+        width: 25%;
+        position: absolute;
+        right: 26%;
+        color: #fff;
+        border: none;
+        height: 30px;
+        padding: 5px;
+        margin: 20px 10px 0;
+        transition: background-color 0.2s;
+        cursor: pointer;
+    }
+}
+
+.user-profile-right {
+    flex-grow: 2;
+    width: 18.586%;
+    background: linear-gradient(to bottom, $home_logo_color, $submitButton);
+    color: $color;
+    .user-auth {
+        margin: 30px 38%;
+        .user-logo {
+            font-size: 50px; 
+            position: relative;
+            i {
+                font-size: 4vw;
+            }
+            .user-profile-photo-edit {
+                font-size: 0.7vw;
+                background-color: $submitButton;
+                border-radius: 50%;
+                padding: 2px;
+                color: #000;
+                position: absolute;
+                bottom: 10px;
+                right: 10%;
+                cursor: pointer;
+                opacity: 0.8;
+                transition: opacity 0.3s;
+            }
+            .user-profile-photo-edit:hover {
+                opacity: 1;
+            } 
+        }
+        
+        .user-pseudo {
+            font-size: 1.1vw;
+        }
+    }
+    .date {
+        color: $bg;
+        background: $color;
+        margin: 0px 20%;
+        font-size: 1vw;
+        font-weight: 600;
+        width: 65%;
+        padding: 10px 10% 10px 18%;
+        align-items: center;
+        border-radius: 10px;
+    }
+}
+
+.active-item {
+    background-color: $color;
+    color: $bg;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+
+.edit-profile .edit-text {
+    margin-left: 10px;
+}
+.subject {
+    display: flex;
+    font-size: 20px;
+    justify-content: space-between;
+    width: 60%;
+    height: 100px;
+    border-radius: 30px; 
+    color: $color;
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 10px $border_color;
+    p{
+        width: 30%;
+        transform: translate(40%, 25%);
+    }
+    .play {
+        width: 70%;
+        padding: 40px 0;
+        font-size: 20px;
+    }
+    //the play or pause button
+    .revision-button {
+        cursor: pointer;
+        margin-left: 45%;
+        transition: transform 0.3s;
+    }
+    .revision-button:hover{
+        transform: scale(1.25);
+    }
+
+    .time-left{
+        transform: translate(-20px, 10px);
+        font-size: 15px;
+    }
+}
+.subject-1 {
+    background: $submitButton;
+}
+.subject-2 {
+    background-color: $home_logo_color;
+}
+.subject-3 {
+    background-color: $border_color;
+}
+.subject-4 {
+    background-color: $submitButton;
+}
+.subject-5 {
+    background-color: $home_logo_color;
+}
+.subject-6 {
+    background-color: $border_color;
+}
+.subject-7 {
+    background-color: $submitButton;
+}
+.subject-8 {
+    background-color: $home_logo_color;
+}
+.subject-9 {
+    background-color: $border_color;
+}
+.subject-10 {
+    background-color: $submitButton;
+}
+.another-time-revision-button {
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    color: $color;
+    transform: translate(620px, -80px);
+    transition: opacity 0.3s;
+}
+.another-time-revision-button:hover {
+    box-shadow: 0 0 5px $border_color;
+    opacity: 0.9;
+}
+.button-1 {
+    background-color: $home_logo_color; 
+}
+.button-2 {
+    background-color: $submitButton;
+}
+.button-3 {
+    background-color: $border_color;
+}
+.button-4 {
+    background-color: $home_logo_color;
+}
+.button-5 {
+    background-color: $submitButton;
+}
+.button-6 {
+    background-color: $border_color;
+}
+.button-7 {
+    background-color: $home_logo_color;
+}
+.button-8 {
+    background-color: $submitButton;
+}
+.button-9 {
+    background-color: $border_color;
+}
+.button-10 {
+    background-color: $home_logo_color;
+} 
+.played-subject-container {
+    height: 324px;
+    border: 2px solid $border_color;
+    border-radius: 30px;
+    //box-shadow: -3px 3px 10px $border_color;
+    animation: scalePadding 1s cubic-bezier(0.075, 0.82, 0.165, 1) both;
+    z-index: 10;
+}
+.not-active-subjects {
+    width: 50%;
+    float: left;
+    animation: slideDown 1s cubic-bezier(0.075, 0.82, 0.165, 1) both;
+}
+.not-active-subjects .subject {
+    width: 100%;
+}
+
+.stop {
+    position: relative;
+    left: 500px;
+    bottom: 90px;
+    border: 2px solid $submitButton;
+    border-radius: 50%;
+    box-shadow: 0 0 3px $border_color;
+    padding: 10px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+.stop:hover {
+    transform: scale(1.2);
+}
+
+.dialog {
+    width: 25%;
+    padding: 20px;
+    height: 150px;
+    background-color: $color;
+    box-shadow: 0 0 5px $border_color;
+    position: fixed;
+    top: -30px;
+    left: 500px;
+    opacity: 0;
+    animation: animateSureDialog 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) both;   
+}
+
+.pause-dialog {
+    height: 150px;
+}
+.ok {
+    float: left;
+    margin-left: 20px;
+    background-color: $submitButton;
+    border: transparent;
+    cursor: pointer;
+    color: $color;
+    padding: 10px;
+}
+.no {
+    float: right;
+    margin-right: 20px;
+    background-color: $bg;
+    border: transparent;
+    cursor: pointer;
+    color: $color;
+    padding: 10px;
+}
+.ok:hover {
+    box-shadow: 0 0 5px $submitButton;
+    opacity: 0.9;
+}
+.no:hover {
+    box-shadow: 0 0 5px $bg;
+    opacity: 0.9;
+}
+//modal openend after the click to the another time revision button
+.another-time-revision-modal {
+    width: 25%;
+    padding: 20px;
+    height: 180px;
+    background-color: $color;
+    box-shadow: 0 0 5px $border_color;
+    position: fixed;
+    top: 100px;
+    left: 500px;
+    opacity: 0;
+    animation: animateAnotherTimeDialog 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) both;
+}
+
+.new-datetime {
+    display: flex;;
+    justify-content: space-between;
+    label {
+        margin-bottom: 20px;
+    }
+}
+//le parent suprême du progress circle
+.circular {
+    position: relative;
+    transform: translate(675px, -175px);
+    width: 130px;
+    height: 130px;
+    .inner {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        top: 50%;
+        left: 50%;
+        z-index: 6;
+        margin: -40px 0 0 -40px;
+        border-radius: 100%;
+        background-color: $color;
+        box-shadow: 0 0 3px $border_color;
+        #chronometer {
+            font-weight: bold;
+            transform: translate(25%, 50%);
+        }
+    }
+    .bar {
+        position: absolute;
+        border-radius: 100%;
+        background: $bg;
+        box-shadow: 0 0 3px $border_color;
+        width: 100%;
+        height: 100%;
+        clip: rect(0px, 135px, 135px, 60px);
+    }
+    .circle {
+        .bar .progress  {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            background-color: $color;
+            clip: rect(0px, 65px, 135px, 0px);
+        }
+        .left .progress {
+            z-index: 1;
+            animation-name: left;
+            animation-timing-function: linear;
+            animation-fill-mode: both;
+        }
+        .right {
+            z-index: 3;
+            transform: rotate(180deg);
+            .progress {
+                animation-name: right;
+                animation-timing-function: linear;
+                animation-fill-mode: both;
+            }
+        }  
+    }
+}
+@keyframes left {
+    100%{
+        transform: rotate(180deg);
+    }
+}
+@keyframes right {
+    100%{
+        transform: rotate(180deg);
+    }
+}
+
+/*-----------------/
+TOUT CE QUI EST REGISTER
+-----------------*/
+.register-form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 100px;
+    background-image: linear-gradient(to bottom, #000, #0005), url('./assets/Term-2_Week-3_How-to-study-texts_Final_6May19.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    .input-container {
+        width: 30%;
+        border: 2px solid $border_color;
+        border-radius: 10px;
+        padding: 7% 3%;
+        transition: transform 0.3s;
+        background-color: #fff4;
+        color: $color;
+        label, input, select {
+            display: table;
+            width: 90%;
+            margin: 0 5% 10px 5%;
+        }
+        input, select {
+            background-color: transparent;
+            border: transparent;
+            border-bottom: 1px solid $border_color;
+        }
+    }
+    .container-three {
+        .indications {
+            color: $color;
+            width: 90%;
+            margin: 0 5% 20px 5%;
+        }
+        .submitBtn {
+            float: right;
+            background: $submitButton;
+            color: #fff;
+            border: none;
+            height: 30px;
+            padding: 5px;
+            margin: 20px 10px 0;
+            transition: background-color 0.2s;
+            cursor: pointer;
+        }
+        .submitBtn:hover{
+            background-color: #cf6a53;
+        }
+        
+    }
+    .active-container {
+        box-shadow: 0 0 6px $border_color;
+        transform: scale(1.02);
+    }
+}
+.register-form-to-carousel {
+    background-image: none;
+    display: block;
+    padding: 50px 0;
+    .carousel-root {
+        //width: 100%;
+        position: relative;
+        .carousel-container {
+            display: flex;
+            justify-content: flex-start;
+            transition: transform 0.3s;
+            transform: translate3d(0,0,0);
+            .carousel-item {
+                padding: 0 4%;
+                .input-container {
+                    padding: 7% 3%;
+                    width: 100%;
+                    height: 300px;
+                    background: $color;
+                    color: $bg;
+                    box-shadow: 0 0 5px $color;
+                }
+                .container-three {
+                    .indications {
+                        color: $bg;
+                    }
+                }
+            }
+        }
+        .left-button, .right-button {
+            background-color: $submitButton;
+            color: $color;
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+            padding: 8px;
+            position: absolute;
+            top: 50%;
+            margin-top: -25px;
+            font-size: 20px;
+            transition: tranform 0.3s;
+        }
+        .left-button {
+            left: 10px;
+        }
+        .right-button {
+            right: 10px;
+        }
+        .left-button:hover, .right-button:hover {
+            transform: scale(1.2);
+        }
+        
+    }
+        
+}
+
+
+.big-alert-danger {
+    opacity: 0;
+    font-size: 15px;
+    width: 90%;
+    border-radius: 10px;
+    color: $color;
+    background-color: $submitButton;
+    padding: 10px;
+    transform: translate(20px, 10px);
+    animation: calendarAnimation 0.3s both;
+}
+.alert-danger {
+    font-size: 12px;
+    color: red;
+    opacity: 0;
+    transition: opacity 0.2s;
+    opacity: 1;
+}
+
+.sign-out-logo {
+    color: $color;
+    background-color: $submitButton;
+    margin: 20px 20px;
+    height: 40px;
+    width: 40px;
+    padding: 13px 0px 0px 13px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.sign-out-logo:hover {
+    background-color: #ce6148;
+}
+/*---------------------------------
+    TOUT CE QUI EST MODAL DE HOME
+--------------------------------*/
+
+.close {
+    float: right;
+    cursor: pointer;
+    color: $submitButton;
+}
+.close:hover{
+    color: #f06040;
+}
+
+.edit-profile-photo-modal {
+    
+    opacity: 0;
+    background-color: $bg;
+    position: fixed;
+    right: 100px;
+    top: 200px;
+    color: $color;
+    width: 30%;
+    height: 200px;
+    padding: 20px;
+    border: 2px solid $border_color;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgb(133, 133, 133);
+    animation: fadeIn 0.5s cubic-bezier(0.19, 1, 0.22, 1) both;
+    
+}
+.editProfilePhotoForm {
+    margin: 30px 0px 0px 50px;
+
+}
+.editProfilePhotoForm input, .editProfilePhotoForm label{
+    display: block;
+    margin-bottom: 10px;
+}
+.editProfilePhotoBtn {
+    width: 200px;
+    height: 10px;
+    color: $color;
+    background-color: $submitButton;
+    padding: 8px 0 35px 10px;
+    font-size: 1.5em;
+    position: absolute;
+    border: transparent;
+    bottom: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.editProfilePhotoBtn:hover {
+    border: 1px solid $color;
+    padding: 7px 0 34px 9px;
+    box-shadow: 0 0 5px $border_color;
+}
+// .edit-profile-photo-active {
+//     right: 300px;
+//     opacity: 1;
+//     transition: right 2s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 0.3s;
+    
+// }
+.closeModal {
+    animation-name: fadeOut;
+}
+//bar de progression
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 6px;
+    background-color: $progressBarColor;
+}
+
+.add-calendar {
+    border-radius: 50%;
+    position: relative;
+    left: 90%;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 2vw;
+    background-color: $bg;
+    color: $color;
+    transition: tranform 0.3s, box-shadow 0.3s;
+}
+.add-calendar:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 5px $bg;
+}
+
+.create-calendar {
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    position: relative;
+    top: 30px;
+    left: 50px;
+    animation: createCalendar 0.3s both;
+}
+
+.slide-instructions-top {
+    transform: translateY(-10px);
+}
+.warning {
+    margin-top: 100px;
+    margin-left: 50px;
+    opacity: 0;
+    i {
+        color: red;
+    }
+    animation: calendarAnimation 0.5s both;
+}
+.content h1 {
+    margin-left: 50px;
+}
+.calendar {
+    opacity: 0;
+    width: 70%;
+    text-align: left;
+    position: absolute;
+    margin-top: 20px;
+    border-collapse: collapse;
+    animation: calendarAnimation 0.3s both;
+    thead {
+        background: $submitButton;
+        color: $color;
+    }
+    td, th {
+        padding: 10px;
+        position: relative;
+        width: 20%;
+        border: 1px solid $bg;
+        i {
+            float: right;
+        }
+    }  
+}
+.add-line, .generate-calendar {
+    padding: 4px;
+    border-radius: 10px;
+    background-color: $bg;
+    color: $color;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.generate-calendar {
+    background-color: $border_color;
+}
+.focus-for-warning {
+    box-shadow: 0 0 5px red;
+    border: transparent;
+}
+.add-line:hover, .generate-calendar:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 3px $border_color;
+}
+
+.hidden {
+    animation: hide 0.3s both;
+}
+
+.remove-line{
+    font-size: 25px;
+    color: $submitButton;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.remove-line:hover{
+    transform: scale(1.1);
+}
+
+.subject-line{
+    opacity: 0;
+    animation: calendarAnimation 0.6s both;
+}
+.invisible-subject-line {
+    opacity: 1;
+    animation: hide 0.3s both;
+}
+
+@keyframes fadeIn {
+    from { right: 100px; opacity: 0;}
+    to { right: 35%; opacity: 1;}
+}
+
+@keyframes fadeOut {
+    from { right: 35%; opacity: 1;}
+    to { right: 100px; opacity: 0;}
+}
+@keyframes calendarAnimation {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+
+@keyframes hide {
+    from { opacity: 1;}
+    to { opacity: 0;}
+}
+
+@keyframes slideDown {
+    from { margin-top: 0; padding: 0;}
+    to {
+        margin-top: 50px; padding: 20px 20px 0 0;
+    }
+}
+
+@keyframes scalePadding {
+    from {
+        padding: 0;
+    }
+    to {
+        padding: 80px;
+    }
+}
+
+@keyframes animateSureDialog {
+    from {
+        top: -30px;
+        opacity: 0;
+    }
+    to {
+        top: 10px;
+        opacity: 1;
+    }  
+}
+
+@keyframes removeDialog {
+    from {
+        top: 10px;
+        opacity: 1;
+    }
+    to {
+        top: -30px;
+        opacity: 0;
+    }
+}
+
+@keyframes animateAnotherTimeDialog {
+    from {
+        top: 100px;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        top: 200px;
+        opacity: 1;
+        transform: scale(1);
+    }  
+}
+
+@keyframes removeAnotherTimeDialog {
+    from {
+        top: 200px;
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        top: 100px;
+        opacity: 0;
+        transform: scale(0.6);
+    }
+}
+
+@keyframes createCalendar {
+    from {
+        top: 120px;
+    }
+    to {
+        top: 30px;
+    }
+}
+
+/* DEBUT PARTIE RESPONSIVE */
+@media screen and (max-width: 1192px) and (min-width: 915px){
+    #login-main .login_container_right {
+        .login_form {
+            padding: 0;
+        }
+    }
+}
+@media screen and (max-width: 914px) and (min-width: 775px){
+    #login-main .login_container_right {
+        padding: 0;
+        .login_form {
+            padding: 0;
+        }
+    }
+    .register-form-container {
+        padding: 50px;
+    }
+}
+@media screen and (max-width: 774px) and (min-width: 561px){
+    #login-main {
+        background-image: linear-gradient(to bottom, #000, #0005), url("./assets/bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        .login_container_right {
+            width: 40%;
+            background-color: transparent;
+            padding: 0;
+            .login_form {
+                padding: 40px 0;
+                margin: 0;
+                label {
+                    font-size: 13px;
+                    color: $color;
+                }
+                input {
+                    background-color: transparent;
+                    border-color: $color;
+                }
+            }
+            .have-no-account {
+                margin: 0 5%;
+            }
+        }
+        .presentation_left {
+            width: 60%;
+            background-image: none;
+        }
+    }
+}
+@media screen and (max-width: 774px) and (min-width: 631px){
+    .register-form-container {
+        padding: 50px;
+    }
+}
+@media screen and (max-width: 560px) {
+    #login-main {
+        background-image: linear-gradient(to bottom, #000, #0005), url("./assets/bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        .login_container_right {
+            width: 100%;
+            background-color: transparent;
+            .login_form {
+                label {
+                    font-size: 13px;
+                    color: $color;
+                }
+                input {
+                    background-color: transparent;
+                }
+            }
+        }
+        .presentation_left {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 341px) {
+    #login-main {
+        .login_container_right {
+            .login_form {
+                padding: 0;
+            }
+        }
+    }
+    
+}
+/* FIN PARTIE RESPONSIVE */

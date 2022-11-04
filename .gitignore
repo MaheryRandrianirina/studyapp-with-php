@@ -1,0 +1,6 @@
+node_modules
+vendor
+
+composer.lock
+instructions.md
+package-lock.json
