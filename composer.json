@@ -1,0 +1,21 @@
+{
+    "name": "mahery/studyapp",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "src\\": "src/",
+            "Database\\": "Database/",
+            "Core\\": "Core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MaherySan"
+        }
+    ],
+    "require": {
+        "altorouter/altorouter": "^2.0",
+        "symfony/var-dumper": "^6.1",
+        "psr/simple-cache": "^3.0"
+    }
+}
